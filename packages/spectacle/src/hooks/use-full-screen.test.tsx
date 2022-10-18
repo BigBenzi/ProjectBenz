@@ -30,6 +30,15 @@ describe('useToggleFullScreen', () => {
         ></button>
       );
     };
+    
+    const oldDocumentFullscreenElement = document.fullscreenElement;
+const setHasFullScreenElement = (hasElement: boolean) => {
+  Object.defineProperty(document, 'fullscreenElement', {
+    value: hasElement,
+    writable: true
+  });
+};
+
 
     const { getByTestId } = render(<TestComponent />);
     fireEvent.click(getByTestId('toggle fullscreen button'));
