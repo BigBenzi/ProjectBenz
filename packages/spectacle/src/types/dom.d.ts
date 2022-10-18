@@ -6,3 +6,15 @@ interface DocumentOrShadowRoot {
 interface HTMLElement {
   webkitRequestFullScreen(): void;
 }
+interface HTMLElement {
+  webkitRequestFullScreen(): void;
+}
+
+interface HTMLElement {
+  webkitRequestFullScreen(): void;
+}
+
+interface HTMLElement {
+  webkitRequestFullScreen(): void;
+}
+
