@@ -170,6 +170,19 @@ const main = async () => {
   }, cliSpinners.dots.interval);
 
   await sleep(750);
+ Needs to be before overwrite confirmation so we can determine if folder/file already exists.
+           */
+          {
+            type: 'select',
+            name: ArgName.type as string,
+            message: 'What type of deck do you want to create?',
+            choices: DeckTypeOptions,
+            initial: (() => {
+              const ind = DeckTypeOptions.findIndex((o) => o.value === type);
+              return ind > -1 ? ind : 0;
+            })()
+          },
+          // If output directory already exists, p
 
   const fileOptions: FileOptions = {
     snakeCaseName: formatProjectOutputPath(name),
